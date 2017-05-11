@@ -15,6 +15,8 @@
 		5EB25E0A1EC414B3000CE892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EB25E081EC414B3000CE892 /* LaunchScreen.storyboard */; };
 		5EB25E571EC41589000CE892 /* UIViewController+XLSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB25E541EC41589000CE892 /* UIViewController+XLSlideMenu.m */; };
 		5EB25E581EC41589000CE892 /* XLSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB25E561EC41589000CE892 /* XLSlideMenu.m */; };
+		5EDCA5171EC432A400C2C062 /* FontListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDCA5161EC432A400C2C062 /* FontListViewController.m */; };
+		5EDCA51A1EC436B200C2C062 /* FontListHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDCA5191EC436B200C2C062 /* FontListHeader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		5EB25E541EC41589000CE892 /* UIViewController+XLSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XLSlideMenu.m"; sourceTree = "<group>"; };
 		5EB25E551EC41589000CE892 /* XLSlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLSlideMenu.h; sourceTree = "<group>"; };
 		5EB25E561EC41589000CE892 /* XLSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLSlideMenu.m; sourceTree = "<group>"; };
+		5EDCA5151EC432A400C2C062 /* FontListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontListViewController.h; sourceTree = "<group>"; };
+		5EDCA5161EC432A400C2C062 /* FontListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontListViewController.m; sourceTree = "<group>"; };
+		5EDCA5181EC436B200C2C062 /* FontListHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontListHeader.h; sourceTree = "<group>"; };
+		5EDCA5191EC436B200C2C062 /* FontListHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontListHeader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,8 @@
 		5EB25E141EC4155D000CE892 /* C */ = {
 			isa = PBXGroup;
 			children = (
+				5EDCA5151EC432A400C2C062 /* FontListViewController.h */,
+				5EDCA5161EC432A400C2C062 /* FontListViewController.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -130,6 +138,8 @@
 		5EB25E161EC4155D000CE892 /* V */ = {
 			isa = PBXGroup;
 			children = (
+				5EDCA5181EC436B200C2C062 /* FontListHeader.h */,
+				5EDCA5191EC436B200C2C062 /* FontListHeader.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -220,6 +230,8 @@
 				5EB25E021EC414B3000CE892 /* ViewController.m in Sources */,
 				5EB25DFF1EC414B3000CE892 /* AppDelegate.m in Sources */,
 				5EB25E581EC41589000CE892 /* XLSlideMenu.m in Sources */,
+				5EDCA5171EC432A400C2C062 /* FontListViewController.m in Sources */,
+				5EDCA51A1EC436B200C2C062 /* FontListHeader.m in Sources */,
 				5EB25DFC1EC414B3000CE892 /* main.m in Sources */,
 				5EB25E571EC41589000CE892 /* UIViewController+XLSlideMenu.m in Sources */,
 			);
@@ -380,6 +392,7 @@
 				5EB25E101EC414B3000CE892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

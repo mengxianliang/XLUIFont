@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "FontListViewController.h"
+#import "XLSlideMenu.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+    XLSlideMenu *slideMenu = [[XLSlideMenu alloc] initWithRootViewController:nav];
+    FontListViewController *fontListVC = [[FontListViewController alloc] init];
+    slideMenu.leftViewController = fontListVC;
+    self.window.rootViewController = slideMenu;
     return YES;
 }
 
