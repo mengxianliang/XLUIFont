@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController
 
+-(void)addFontName:(NSString*)fontName;
+-(void)removeFontName:(NSString *)fontName;
 
 @end
 

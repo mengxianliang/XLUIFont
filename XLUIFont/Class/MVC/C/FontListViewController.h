@@ -10,4 +10,6 @@
 
 @interface FontListViewController : UIViewController
 
+-(void)refresh;
+
 @end

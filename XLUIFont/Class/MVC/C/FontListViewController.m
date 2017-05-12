@@ -7,10 +7,11 @@
 //
 
 #import "FontListViewController.h"
+#import "ViewController.h"
 #import "XLSlideMenu.h"
 #import "FontListHeader.h"
 
-@interface FontListViewController ()<UITableViewDelegate,UITableViewDataSource>{
+@interface FontListViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>{
     UITableView *_tableView;
     NSArray *_fontFamilyNames;
 }
@@ -27,17 +28,11 @@
 
 -(void)buildTable
 {
-    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.xl_sldeMenu.menuWidth, 40)];
-    searchBar.tintColor = [UIColor colorWithRed:0/255.0 green:122/255.0 blue:255/255.0 alpha:1];
-    searchBar.barTintColor = [UIColor colorWithRed:247/255.0f green:247/255.0f blue:247/255.0f alpha:1];
-    searchBar.placeholder = @"Search Font Name";
-    
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,20, self.xl_sldeMenu.menuWidth, self.view.bounds.size.height - 20)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.allowsMultipleSelectionDuringEditing = true;
     _tableView.editing = true;
-    _tableView.tableHeaderView = searchBar;
     [self.view addSubview:_tableView];
 }
 
@@ -78,7 +73,7 @@
     cell.textLabel.text = fontName;
     cell.textLabel.font = [UIFont fontWithName:fontName size:17];
     cell.textLabel.adjustsFontSizeToFitWidth = true;
-    cell.textLabel.textColor = [UIColor colorWithRed:0/255.0 green:122/255.0 blue:255/255.0 alpha:1];
+//    cell.textLabel.textColor = [UIColor colorWithRed:0/255.0 green:122/255.0 blue:255/255.0 alpha:1];
     return cell;
 }
 
@@ -99,7 +94,26 @@
 #pragma mark -
 #pragma mark TableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *fontName = [self fontNamesInSection:indexPath.section][indexPath.row];
+    UINavigationController *nav = (UINavigationController *)self.xl_sldeMenu.rootViewController;
+    ViewController *vc = (ViewController *)nav.topViewController;
+    [vc addFontName:fontName];
     [self.xl_sldeMenu showRootViewControllerAnimated:true];
+}
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *fontName = [self fontNamesInSection:indexPath.section][indexPath.row];
+    UINavigationController *nav = (UINavigationController *)self.xl_sldeMenu.rootViewController;
+    ViewController *vc = (ViewController *)nav.topViewController;
+    [vc removeFontName:fontName];
+    [self.xl_sldeMenu showRootViewControllerAnimated:true];
+}
+
+#pragma mark -
+#pragma mark 其他方法
+-(void)refresh{
+    [_tableView reloadData];
+    [_tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:true];
 }
 
 - (void)didReceiveMemoryWarning {
