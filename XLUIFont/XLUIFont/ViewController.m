@@ -37,9 +37,9 @@ static NSString *DefaultSampleText = @"abc&ABC123!";
     
     _composeItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(edit)];
     
-    UIBarButtonItem *refreshItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh)];
+    UIBarButtonItem *refreshItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(refresh)];
     
-    self.navigationItem.rightBarButtonItems = @[_composeItem,refreshItem];
+    self.navigationItem.rightBarButtonItems = @[refreshItem,_composeItem];
     
     _fontNames = [[NSMutableArray alloc] init];
     
