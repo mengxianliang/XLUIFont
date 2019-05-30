@@ -86,6 +86,10 @@ static NSString *DefaultSampleText = @"abc&ABC123!";
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"fontName：%@",_fontNames[indexPath.row]);
+}
+
 #pragma mark -
 #pragma mark OtherMethods
 
