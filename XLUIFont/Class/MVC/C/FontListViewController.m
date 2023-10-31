@@ -70,6 +70,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     NSString *fontName = [self fontNamesInSection:indexPath.section][indexPath.row];
+    NSLog(@"fontName = %@", fontName);
     cell.textLabel.text = fontName;
     cell.textLabel.font = [UIFont fontWithName:fontName size:17];
     cell.textLabel.adjustsFontSizeToFitWidth = true;
@@ -87,6 +88,7 @@
     if (!_fontFamilyNames) {
         NSArray *familyNames = [UIFont familyNames];
         _fontFamilyNames = [familyNames sortedArrayUsingSelector:@selector(compare:)];
+        NSLog(@"familyNames = %@", familyNames);
     }
     return _fontFamilyNames;
 }
